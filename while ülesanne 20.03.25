@@ -1,0 +1,119 @@
+# kirjuta programm mis
+# küsib kasutajalt tsükli sees kui vana ta on (tühja sisestuse puhul küsitakse uuesti niikaua kuni kasutaja on midagi kirjutanud)
+# - kui kasutaja on noorem kui 3 aastat, ütle kasutajale et on liiga noor, ning kujundit ei joonistata
+
+# - küsid kasutajalt kas ta on kindel et sisestas oma vanuse õigesti.
+# - - kui kasutaja vastab jah, siis öeldakse talle et mine koju
+# - - - kasutaja saab kirjutada kas okei, või pliis
+# - - - kui kasutaja on kirjutanud pliis 5 korda, saab ka alla-3 aastane kujundit joonistada
+# - - kui kasutaja vastab ei, siis küsitakse tema vanust uuesti
+
+# küsib kasutajalt tsükli sees mis on ta lemmikvärv
+# - Valikusse pange(punane oranz kollane roheline helesinine tumesinine lilla roosa must valge pruun tumerohline ja teal)
+# - kasutajasisend tuleb standardiseerida sõnetöötlusmeetoditega
+# - kui kasutaja ei sisesta midagi mis on valikus, töötab tsükkel niikaua kuni kasutaja sisestab midagi mis on
+# - kasutajasisend tõlgitakse turtle jaoks inglise keelde ifide abil
+# küsib kasutajalt tsükli sees mis on ta lemmikkujund
+# - Valikusse pange(ring, ruut, võrdhaarne kolmnurk, kuusnurk)
+# - kasutajasisend tuleb standardiseerida sõnetöötlusmeetoditega
+# - kui kasutaja ei sisesta midagi mis on valikus, töötab tsükkel niikaua kuni kasutaja sisestab midagi mis on
+# Põhinedes kasutajalt saadud andmetele, joonista kasutaja lemmikvärviga tema lemmikkujund.
+# Siis tagasta konsooli sõnum "Palun <nimi>, siin on sinu <värv> <kujund>!"
+
+
+from turtle import *
+
+nimi = ""
+vanus = 0
+värv = ""
+
+
+while(nimi == ""):
+    nimi = input("Palun sisestage oma nimi ")
+while(vanus == 0):
+    vanus = int(input("Kui vana sa oled?"))
+    if (vanus < 3):
+        print("Te olete liiga noor, ja me ei saa teile kujundit joonistada")
+    if (vanus > 3):
+        print("Saame teile joonistada kujundi!")
+while(värv == ""):
+    värv = input("Mis on teie lemmik värv, meil on valida punane, oranz, kollane, roheline, helesinine, tumesinine, lilla, roosa, must, valge, pruun, tumeroheline ja teal ")
+    if (värv == "punane"):
+        värv = "red"
+    if (värv == "oranz"):
+        värv = "orange"
+    if (värv == "kollane"):
+        värv = "yellow"
+    if (värv == "roheline"):
+        värv = "green"
+    if (värv == "helesinine"):
+        värv = "cyan"
+    if (värv == "tumesinine"):
+        värv = "db"
+    if (värv == "lilla"):
+        värv = "purple"
+    if (värv == "roosa"):
+        värv = "pink"
+    if (värv == "must"):
+        värv = "black"
+    if (värv == "valge"):
+        värv = "white"
+    if (värv == "pruun"):
+        värv = "brown"
+    if (värv == "tumeroheline"):
+        värv = "dg"
+    if (värv == "teal"):
+        värv = "teal"
+    color(värv)
+    lemmikkujund = input("Meil on valikus, ring, ruut, ristkülik, võrdhaarne kolmnurk, kuusnurk")
+    if (lemmikkujund == "ring"):
+        begin_fill()
+        circle(100)
+        end_fill()
+    if (lemmikkujund == "ruut"):
+        begin_fill()
+        fd (100)
+        lt (90)
+        fd (100)
+        lt (90)
+        fd (100)
+        lt (90)
+        fd (100)
+        lt (90)
+        end_fill()
+    if (lemmikkujund == "ristkülik"):
+        begin_fill()
+        fd (200)
+        lt(90)
+        fd(100)
+        lt(90)
+        fd(200)
+        lt(90)
+        fd(105)
+        end_fill()
+    if (lemmikkujund == "võrdhaarne kolmnurk"):
+        begin_fill()
+        fd(75)
+        lt(115)
+        fd(100)
+        lt(135)
+        fd(100)
+        end_fill()
+    if (lemmikkujund == "kuusnurk"):
+        begin_fill()
+        fd(100)
+        lt(60)
+        fd(100)
+        lt(60)
+        fd(110)
+        lt(60)
+        fd(100)
+        lt(60)
+        fd(100)
+        lt(60)
+        fd(110)
+        end_fill()
+        
+print(" Palun " + nimi + " siin on sinu "  + värv + " " + lemmikkujund + "!")
+    
+     
