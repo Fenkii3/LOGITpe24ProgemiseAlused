@@ -1,0 +1,44 @@
+# kirjuta programm mis
+# küsib kasutajalt tsükli sees
+# kas tal on hapukapsas
+# - kui kasutajal ei ole, siis öeldakse et saab hautist
+# kas tal on pott
+# - kui kasutajal potti ei ole, siis öeldakse et suppi teha ei saa
+# kas tal on vett
+# - kui kasutajal vett ei ole, siis öeldakse et saab mulgikapsaid teha
+# kas tal on kartulit
+# kas tal on puljongit
+# kas kasutajal on midagi muud kapis (ei/kasutajavastus)
+# - kui kasutajal ei ole, siis öeldakse midagi eelnevatest sobivatest vastustest
+# - kui kasutajal on, siis öeldakse et saab ühepajatoitu
+# kogu arvutamine peab toimuma loogiliste tehetega
+
+hapukapsas = ""
+pott = ""
+vesi = ""
+kartul = ""
+puljong = ""
+muu = ""
+
+while(hapukapsas == "" or pott == "" or vesi == "" or kartul == "" or puljong == "" or muu == ""):
+    hapukapsas = input("kas sul on kapsast? ja/ei: ")
+    pott = input("Kas sul on pott ja/ei?")
+    vesi = input("Kas sul on vett ja/ei?: ")
+    kartul = input("Kas sul on kartulit ja/ei?: ")
+    puljong = input("Kas sul on puljongit ja/ei?: ")
+    muu = input("Kas sul on kapis midagi muud ja/ei?: ")
+    
+if pott == "ja":
+    if hapukapsas == "ja" and vesi == "ja" and kartul == "ja" and puljong == "ja" and muu == "ei":
+        print("saad teha hapukapsasuppi")
+    elif hapukapsas == "ei" and vesi == "ja" and kartul == "ja" and puljong == "ja" and muu == "ei":
+        print("saad teha hautist")
+    elif hapukapsas == "ja" and pott == "ei" and vesi == "ja" and kartul == "ja" and puljong == "ja" and muu == "ja":
+        print("Sa ei saa valmistada midagi")
+    elif hapukapsas == "ja" and pott == "ja" and vesi == "ei" and kartul == "ja" and puljong == "ja" and muu == "ei":
+        print("saad teha mulgikapsaid")
+    elif hapukapsas == "ja" and pott == "ja" and vesi == "ja" and kartul == "ja" and puljong == "ja" and muu == "ja":
+        print("Saad teha ühepajatoitu")
+else:
+    print("Sa ei saa teha midagi kuna sul puudub pott")
+    
