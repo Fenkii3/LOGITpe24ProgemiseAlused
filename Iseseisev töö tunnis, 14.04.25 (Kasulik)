@@ -1,0 +1,85 @@
+# NB! kasutajalt sisendi võtmine peab igal juhul tsüklis olema niikaua kuni programm saab õige sisendi
+# NB! kasutajasisend tuleb töödelda standardkujuke, nime puhul esisuurtäht, programmi jaoks vajalik sisend ühtlasele kujule jne
+# kirjuta programm mis
+#
+# küsib kasutajalt kui vana ta on
+# küsib kasutajalt kui pikk ta on meetrites
+# küsib kasutajalt tema ees ja perekonnanime
+# küsib kasutajalt kas talle meeldivad geomeetrilised kujundid
+# kui kasutaja vastab jah, siis küsitakse kasutajalt terve rida küsimusi järgnevate kujundite kohta: (ring, ruut, kolmnurk, ovaal)
+# - kas talle meeldib <kujund>
+# - kui kasutaja vastab <kujund>i kohta jah, siis peab programm meelde jätma et kasutaja tahab seda kujundit eraldi muutujas
+# - kasutajalt küsitakse ka tema lemmikvärvi kohta, mille jaoks antakse kasutajale inglisekeelne valik
+# - seejärel joonistab programm kõik kujundid mis said "jah" vastuse kasutaja lemmikvärviga ekraanile +
+# - kujundite küljepikkus tuleb läbi korrutada kasutaja pikkusega. kujundite standardküljepikkus on 100px
+# - Viimasena joonistatakse ekraanile teksti abil sõnum "palun"<kasutajanimi>"siin on sinu lemmikkujundid"<värv> värviga
+
+from tkinter import *
+
+raam = Tk()
+raam.title("seksikas tahvel")
+tahvel = Canvas(raam, width=1000, height=1000)
+
+vanus = ""
+pikkus = 0
+EPnimi = ""
+geokujundid = ""
+kujund = ""
+värv = ""
+ring = ""
+ruut = ""
+kolmnurk = ""
+ovaal = ""
+küljepikkus = 100
+
+while (vanus == ""):
+    vanus = input("Kui vana sa oled?: ")
+
+while (pikkus == 0):
+    pikkus = float(input("Kui pikk sa oled meetrites?: "))
+    küljepikkus *= pikkus
+
+while (EPnimi == ""):
+    EPnimi = input("Mis on sinu ees-ja perekonnanimi?: ")
+    
+while (geokujundid == ""):
+    geokujundid = input("Kas sulle meeldivad geomeetrilised kujundid?: ")
+    if (geokujundid == "jah"):
+        print("Selge!")
+        
+while (ring == ""):
+    ring = input("kas sulle meeldib, ring? ")
+    if (kujund == "jah"):
+        print("Selge!")
+while (ruut == ""):
+    ruut= input("kas sulle meeldib, ruut? ")
+    if (kujund == "jah"):
+        print("Selge!")
+while (kolmnurk == ""):
+    kolmnurk = input("kas sulle meeldib, kolmnurk? ")
+    if (kujund == "jah"):
+        print("Selge!")
+while (ovaal == ""):
+    ovaal = input("kas sulle meeldib, ovaal? ")
+    if (kujund == "jah"):
+        print("Selge!")
+        
+while (värv == ""):
+    värv = input("Mis on su lemmikvärv, valikus punane, sinine, roheline, pruun, roosa, must, , vasta Inglise Keeles?: ")
+    
+if (ruut.lower() == "jah"):
+    tahvel.create_rectangle(10,10,110,110, outline ="black",fill =värv,width = 2)
+if (ring.lower() == "jah"):
+    tahvel.create_oval(400,200,500,300, width = 2, outline = "black", fill = värv)
+if (kolmnurk.lower() == "jah"):
+    tahvel.create_polygon(200,200,200,300,300,300, width=2, fill=värv)
+if (ovaal.lower() == "jah"):
+    tahvel.create_oval(500,200,600,500, width = 2, outline = "black", fill = värv)
+    
+  
+tahvel.create_text(250,250, text = ("palun "+EPnimi+" siin on sinu lemmikkujund "+värv+" värviga").title(), fill="blue")
+    
+    
+tahvel.pack()
+
+raam.mainloop()
