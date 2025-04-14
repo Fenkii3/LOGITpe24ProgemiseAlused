@@ -1,0 +1,56 @@
+#kirjuta programm mis
+#kasutab time paketti
+#kasutab tkinter paketti
+#
+# joonista tahvlile ring
+# kasutades time.sleep() ja tahvel.move() ning raam.update() käsklusi
+# pane ring ümber ekraani tsükli abil liikuma
+# - kõigepealt edasi-tagasi
+# - ja siis üles-alla
+# - ning siis ürita tsüklid ringiminemise jaoks ühendada
+# tahvel.move() liigutab objekti, parameetrid: (muutuja, järgmine x, järgmine y)
+# raam.update() värskendab akna sisu, vajalik enne ka tahvel.pack() teha
+# time.sleep() pidurdab programmi tööd millisekundite jagu. 1000ms = 1s
+
+from tkinter import *
+from time import *
+
+px = 0
+py = 0
+
+raam = Tk()
+raam.title("seksikas tahvel")
+tahvel = Canvas(raam, width=1000, height=1000)
+
+ovaal = tahvel.create_oval(0,0,100,100, width = 1, outline = "black", fill = "black")
+
+while py < 900:
+    py+=5
+    tahvel.coords(ovaal, 0, py,100, 100+py)
+    raam.after(25)
+    raam.update()
+    tahvel.pack()
+    print("kordinaat:",py,"kujund",tahvel.coords(ovaal))
+
+while px < 900:
+    px+=5
+    tahvel.coords(ovaal, px, py,px+100, 100+py)
+    raam.after(25)
+    raam.update()
+    tahvel.pack()
+    
+    
+sleep(1)
+while py > 0:
+    py-=5
+    tahvel.coords(ovaal, 0, py,100, 100+py)
+    raam.after(25)
+    raam.update()
+    tahvel.pack()
+    print("kordinaat:",py,"kujund",tahvel.coords(ovaal))
+
+    
+    
+
+
+raam.mainloop()
