@@ -1,0 +1,78 @@
+# NB! kasutajalt sisendi võtmine peab igal juhul tsüklis olema niikaua kuni programm saab õige sisendi
+# NB! kasutajasisend tuleb töödelda standardkujuke, nime puhul esisuurtäht, programmi jaoks vajalik sisend ühtlasele kujule jne
+# kirjuta programm mis
+#
+# küsib kasutajalt tema pin koodi
+# küsib kasutajalt tema isikukoodi
+# kasutaja saab sisestada pin koodi ainult 3 korda
+# kasutaja saab sisestada isikukoodi ka ainult 3 korda
+# kui kasutaja on kõik korrad valesti sisestanud kas isikukoodi või pin koodi:
+# - joonista kasutajale pilt, kus on kurb nägu trellide taga
+# kui pinkood ja isikukood on õiged, küsi kasutajalt:
+# - kas ta tahab raha välja võtta või oma pangakaarti tagasi
+# - kui ta tahab raha välja võtta siis
+# - - küsi kasutajalt kui palju ning joonista talle rahaleht mille peal on väljavõetud summa kirjutatud
+# - kui ta tahab oma pangakaarti tagasi siis
+# - - joonista talle pangakaart mille peal on tema isikukood
+
+from tkinter import *
+
+raam = Tk()
+raam.title("seksikas tahvel")
+tahvel = Canvas(raam, width=400, height=400)
+
+pinkood = 0
+isikukood = 0
+katsed = 3
+kujund = ""
+raha = ""
+
+while katsed > 0 and pinkood != 4470:
+        pinkood = int(input("Mis on su pin-kood?"))
+        katsed = katsed - 1
+
+while katsed > 0 and isikukood != 50809037019:
+        isikukood = int(input("Mis on su isikukood?"))
+        katsed = katsed - 1
+if (pinkood != 4470):
+    tahvel.create_oval(35,20,365,350, width = 2, fill = "yellow")
+    tahvel.create_line(170,250,200,232,230,250, width = 2, fill = "black")
+    tahvel.create_line(100,150,180,110, width = 2, fill = "black")
+    tahvel.create_line(200,110,270,150, width = 2, fill = "black")
+    tahvel.create_line(170,0,170,400, width = 7, fill = "black")
+    tahvel.create_line(250,0,250,400, width = 7, fill = "black")
+    tahvel.create_line(0,200,500,200, width = 7, fill = "black")
+    tahvel.create_line(0,100,500,100, width = 7, fill = "black")
+
+if (isikukood != 50809037019):
+    tahvel.create_oval(35,20,365,350, width = 2, fill = "yellow")
+    tahvel.create_line(170,250,200,232,230,250, width = 2, fill = "black")
+    tahvel.create_line(100,150,180,110, width = 2, fill = "black")
+    tahvel.create_line(200,110,270,150, width = 2, fill = "black")
+    tahvel.create_line(170,0,170,400, width = 7, fill = "black")
+    tahvel.create_line(250,0,250,400, width = 7, fill = "black")
+    tahvel.create_line(0,200,500,200, width = 7, fill = "black")
+    tahvel.create_line(0,100,500,100, width = 7, fill = "black")
+    
+if pinkood == 4470:
+    raha = input("Kas sa soovid raha välja võtta või oma pangakaarti tagasi? välja/tagasi ")
+if isikukood == 50809037019:
+    raha = input("Kas sa soovid raha välja võtta või oma pangakaarti tagasi? välja/tagasi")
+
+if (raha == "välja"):
+    tahvel.create_rectangle(100,150,300,250,outline ="green",fill = "green",width = 2)
+    tahvel.create_oval(250, 170, 140, 230, width = 2, outline = "black")
+    tahvel.create_text(190,200, text = 500, fill = "black")
+
+if (raha == "tagasi"):
+    tahvel.create_rectangle(100,150,300,250,outline ="orange",fill = "orange",width = 2)
+    tahvel.create_text(190,200, text = 50809037019, fill = "black")
+    
+
+    
+
+
+
+tahvel.pack()
+
+raam.mainloop()
