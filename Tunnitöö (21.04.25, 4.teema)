@@ -1,0 +1,101 @@
+# kõik küsimised tsükliga
+# kõik joonistamised tsükliga
+# küik sisendid töödelda
+#
+# kirjuta programm mis
+# küsib kasutajalt tema tunnusjooni
+# mis on ta nahavärv ("kasutaja ütleb inglisekeelse värvi")
+# kas tal on müts (kui jah siis valikus on nokamüts, torumüts ja fedora, kui ei, siis joonista juuksed)
+# milline tuju tal on (hea C:, tavaline :I, halb :C, üllatunud :O, tülpinud I:C)
+# ja mis ilm on (pilvitu = sinine taust, pilvine = valge taust, vihmane= hall taust, )
+# programm tagastab pildi kasutajale temast praegusel ajahetkel.
+
+
+
+
+from tkinter import *
+
+nahavärv = ""
+kasonmüts = ""
+millinemüts = ""
+kasutajatuju = ""
+hetkeilm = ""
+
+raam = Tk()
+tahvel = Canvas(raam, width=500, height=500)
+
+#küsimistegevus
+while (nahavärv == "" or kasonmüts == "" or millinemüts == "" or kasutajatuju == "" or hetkeilm == ""):
+    if (nahavärv == ""):
+        nahavärv = input("Mis on su nahavärv: hele/päevitunud/punanahk/araablane/pronksjas/tume")
+    if (kasonmüts == ""):
+        kasonmüts = input("Kas sul on müts? jah/ei")
+    if (millinemüts == ""):
+        millinemüts = input("Milline su müts on?: nokamüts/torumüts/fedora")
+    if (kasutajatuju == ""):
+        kasutajatuju = input("Mis tuju sul on?: 1-hea/2-tavaline/3-halb/4-üllatunud/5-tülpinud")
+    if (hetkeilm == ""):
+        hetkeilm = input("Milline on ilm?: pilvitu/pilvine/vihmane")
+        
+if (nahavärv.lower() == "hele"):
+    nahavärv = "#FFCCE0"
+elif (nahavärv.lower() == "päevitunud"):
+    nahavärv = "#DEAD4B"
+elif (nahavärv.lower() == "punanahk"):
+    nahavärv = "#DE7C4B"
+elif (nahavärv.lower() == "pronksjas"):
+    nahavärv = "#8C390F"
+elif (nahavärv.lower() == "tume"):
+    nahavärv = "#4F1E05"
+    
+if hetkeilm.lower() == "pilvitu":
+    tahvel.configure(bg="lightblue")
+elif hetkeilm.lower() == "pilvine":
+    tahvel.configure(bg="white")
+elif hetkeilm.lower() == "vihmane":
+    tahvel.configure(bg="gray")
+    
+def joonistaNägu(nahavärv,kasonmüts,millinemüts,kasutajatuju):
+    tahvel.create_oval(50,50,450,450,fill=nahavärv,outline="black",width=5)
+    tahvel.create_oval(140,140,160,160,fill="green",outline="black",width=2)
+    tahvel.create_oval(340,140,360,160,fill="green",outline="black",width=2)
+    if kasonmüts.lower() == "jah":
+        if millinemüts.lower() == "nokamüts":
+            tahvel.create_polygon(100,100,200,100,200,75,250,25,300,25,400,75,400,100, fill="red",outline="black", width=10)
+            #joonista nokamüts
+        if millinemüts.lower() == "torumüts":
+            tahvel.create_polygon(50,50,150,50,150,0,350,0,350,190,450,100, fill="gray",outline="black",width=10)
+            #joonista torumüts
+        if millinemüts.lower() == "fedora":
+            tahvel.create_oval(150,25,350,100, fill="yellow", outline="black")
+            tahvel.create_polygon(210,76,239,82,265,82,296,74,283,8,135,38,232,38,229,17,215,18, fill= "yellow", outline="black",width=3)
+            #joonista fedora
+    else:
+        #joonista juuksed
+        tahvel.create_polygon(93,24,77,146,171,117,245,130,317,112,412,132,392,17,363,40,331,17,307,40,267,17,246,40,205,17,181,40,153,17,122,40,93,17,outline="black")
+    
+    if int(kasutajatuju.lower()) == 1:
+        tahvel.create_line(150,336,172,365,318,382,285,382,336,365,365,336,fill="black", width=5)
+          #joonista naeratus
+    elif int(kasutajatuju.lower()) == 2:
+        tahvel.create_polygon(136,318,346,330, outline="black", width=2)
+        #joonista kriips-suu
+    elif int(kasutajatuju.lower()) == 3:
+        tahvel.create_line(129,366,140,347,166,332,206,331,248,330,290,333,315,332,328,345,336,358,339,367, fill="black", width=5)
+         #joonista kurb suu
+    elif int(kasutajatuju.lower()) == 4:
+        tahvel.create_line(135,340,146,353,158,369,184,370,224,372,260,373,287,372,306,369,323,352,338,337,303,339,263,340,228,340,200,340,173,341,155,340, fill="black", width=5)
+         #joonista lahtine suu
+    elif int(kasutajatuju.lower()) == 5:
+        tahvel.create_line(138,369,153,341,176,326,210,326,249,326,277,326,306,326,328,337,337,351,342,372, fill="black", width=5)
+        tahvel.create_line(119,113,131,119,144,131,157,142, fill="black",width=2)
+        tahvel.create_line(334,105,320,120,310,134,302,148, fill="black",width=2)
+       #joonista kurb suu ja kurjad kulmud
+    else:
+        print("Kasutajatuju ei ole õige asi, palun proovi uuesti")
+
+joonistaNägu(nahavärv,kasonmüts,millinemüts,kasutajatuju)
+
+
+tahvel.pack()
+raam.mainloop()
