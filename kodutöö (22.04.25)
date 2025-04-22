@@ -1,0 +1,19 @@
+# NB! Kõik küsimised on tsüklis mis kontrollitud tsüklimuutujaga (mitte True ja break)
+# NB! Kõik sisendid töödeldakse standardkujule
+# kirjuta programm mis
+#
+# küsib kasutajalt kas tal on perekonnaliikmeid
+# - kui jah, siis küsib nende kõikide liikmete lemmikloomanimseid
+#  - kui ei, siis küsib kas kasutajal on lemmikloomi
+# -- kui jah, siis küsib kõiki nimesid
+# -- kui ei, siis ütleb kahju, pesaleidjas on palju kasse kes tahaksid kodu.
+# programm väljastab lause, kus loetletakse kõik lemmikloomad, lemmikloomade puudumisel seda sammu ei teha
+
+perekonnaliikmed = []
+lemmikloomad = "a"
+while (lemmikloomad != ""):
+    lemmikloomad = input("Kas sul on perekonnaliikmeid? jah/ei")
+    if (lemmikloomad == "jah"):
+        lemmikloomad = input("Sisesta enda lemmikloomade nimed: ")
+    if (lemmikloomad == "ei"):
+        lemmikloomad = input("Kas sul on lemmikloomi?")
