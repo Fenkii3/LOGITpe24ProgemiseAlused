@@ -1,0 +1,21 @@
+# kirjuta programm mis
+#
+# küsib kasutajalt tema pereliikmete pikkuseid meetrites
+# arvutab välja pereliikmete keskmise pikkuse
+# ütleb kasutajale tema pereliikmete keskmise pikkuse
+
+perekonnaliikmed = [] # tühi järjend kuhu perekonnaliikmete pikkused pannakse
+vanused = 1.0 # tsüklimuutuja, mis ei ole tühi, selles muutujas hoitakse ühtlasi ka kasutaja vanust
+while (vanused != 0.0): # tsükkel toimib niikaua kuni vanus ei ole 0 ega 0.0
+    vanused = float(input("Mis on sinu pereliikmete pikkused meetrites?")) # jüsime kasutajalt sisendit
+    if vanused != 0.0: # vajalik kontroll, et ei lisataks tühja sisendit järjendisse, muidu andmed ei ole puhtad
+        perekonnaliikmed.append(vanused) # appen(muutujanimi) meetodiga lisame järjendile kasutajasisestuse elemendina otsa
+print(vanused) # kuvame kogu järjendi välja
+jagaja = len(perekonnaliikmed) # jagaja, mille sisu saame loendades len(järjend) meetodiga kokku mitu elementi järjendis on
+jagatav = 0.0 # muutuja, mis hoiab summat ehk jagatavat tulemust. Hetkel tühi (0.0)
+tsüklimuutuja = 0 # tsüklimuutuja mis algab nullist ja kasutatakse ka järjendi elementide individuaalseks adresseerimiseks
+while tsüklimuutuja < jagaja: # tsükkel toimib niikaua kuni tsüklimuutuja ei ole jagajast suurem
+    jagatav+=perekonnaliikmed[tsüklimuutuja] # toimub tehe, kus jagatavasse lisatakse juurde elemendi väärtus, asukohal tsüklimuutuja
+    tsüklimuutuja += 1 # tsüklimuutujat suurendatakse
+keskminepikkus = jagatav / jagaja # arvutatakse välja keskmine pikkus
+print(keskminepikkus) # ja kuvatakse kasutajale
