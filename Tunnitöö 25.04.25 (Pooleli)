@@ -1,0 +1,46 @@
+# Kirjuta ülesanne mis: (vaja teha)
+# - küsib kasutajalt kas ta otsib mingit seent või marja
+# - küsimine toimub tsükli sees
+# - - kui seent, siis programm esitab talle seente järjendi sisu. (seal on seened mida te panna otsustasite)
+# - - - siis küsib kasutajalt millise seene kohta ta lugeda tahab, ning teisest - sisujärjendist - kuvatakse
+# kasutajale seene kohta tekst
+# - - - - Kasutajale antakse koos seeneloendiga ka üks alati esinev valikuvõimalus - "lisa juurde"
+# Lisa juurde valikuga lisatakse seentejärjendile otsa uus element, mille sisend küsitakse kasutajalt
+# - - - - sama tehakse ka sisujärjendiga kuhu küsitakse otsa uue sisestatud seene juurde ka selle seene kirjelduslikm info.
+# - - kui marja, siis programm esitab talle marjade järjendi sisu. (seal on marjad mida te panna otsustasite)
+# - - - siis küsib kasutajalt millise marja kohta ta lugeda tahab, ning teisest - sisujärjendist - kuvatakse
+# kasutajale marja kohta tekst
+# - - - - Kasutajale antakse koos marjaloendiga ka üks alati esinev valikuvõimalus - "lisa juurde"
+# Lisa juurde valikuga lisatakse marjajärjendile otsa uus element, mille sisend küsitakse kasutajalt
+# - - - - sama tehakse ka sisujärjendiga kuhu küsitakse otsa uue sisestatud marja juurde ka selle marja kirjelduslikm info.
+# - pärast seda küsib programm uuesti kas ta tahab lugeda veel millegi kohta, ning programm läheb
+
+
+seenmari = ""
+puravik = ""
+kukeseen = ""
+šampinjon = ""
+kärbseseen = ""
+murumuna = ""
+
+while(seenmari == ""):
+    seenmari = input("Kas sa otsid mingit seent või marja?").lower()
+    if (seenmari == "seent"):
+            seenmari = ['puravik', 'kukeseen', 'šampinjon', 'kärbseseen', 'murumuna']
+            for i in seenmari:
+                print(i)
+            seenmari = input("Millise seene kohta lugeda tahad?").lower()
+
+while(seenmari == "puravik"):
+    puravik = input("Puravik on puravikuliste sugukonda kuuluv seeneperekond")
+while(seenmari == "kukeseen"):
+    kukeseen = input("Harilik kukeseen ehk kantarell on kukeseeneliste sugukonda kukeseene perekonda kuuluv seeneliik.")
+while(seenmari == "šampinjon"):
+    šampinjon = input("Šampinjon on šampinjoniliste sugukonda, šampinjonilaadsete seltsi kuuluv perekond seeni.")
+while (seenmari == "kärbseseen"):
+    kärbseseen = input("Kärbseseen on kandseente perekond kärbseseeneliste sugukonnast.")
+while(seenmari == "murumuna"):
+    murumuna = input("Murumuna murumunaliste sugukonda kuuluv seeneperekond.")
+
+
+            
