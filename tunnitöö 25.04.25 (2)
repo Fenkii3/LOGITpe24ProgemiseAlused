@@ -1,0 +1,14 @@
+#kirjuta programm mis
+#küsib kasutajalt tema lemmikloomanimseid
+#küsimine lõppeb tühja sisendiga mida ise järjendisse ei panda
+#programm väljastab for-tsükliga kõik nimed
+
+loomanimed = []
+hetkenimi = ""
+while hetkenimi == "":
+    hetkenimi = input("Sisesta lemmiklooma nimi")
+    if hetkenimi != "":
+        loomanimed += [hetkenimi]
+        
+for i in range(len(loomanimed)):
+    print(loomanimed[i])
