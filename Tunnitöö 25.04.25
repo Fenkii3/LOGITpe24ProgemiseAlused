@@ -1,0 +1,30 @@
+linnanimi = "Warssav"
+print(linnanimi[6])
+ 
+# el 0 el 1 el 2 el 3 el 4
+linnanimed = ['Warssav', 'Tallinn', 'Helsingi', 'Kyoto', 'Kuala Lumpur']
+# el 0 el 1 el 2 el 3 el 4
+kohukesemaitsed = ['maasika', 'Vanilli', 'kakao', 'kondendspiim', 'marmelaadi']
+ 
+print(linnanimed[0:2]) #viilutab järjendi alustades elemndist 0, kuni elemendini 2, element 2 väljaarvatud
+print(linnanimed[:2]) #teeb sama, kuna vaikeväärtusena, kooloni ees, alustatakse järjendi algusest
+print(linnanimed[1:4]) #viilutab järjendi alustades elemndist 0, kuni elemendini 4, element 4 väljaarvatud
+print(linnanimed[3:5]) #viilutab järjendi alustades elemndist 3, kuni elemendini olematu elemendini 5, element 5 väljaarvatud
+print(linnanimed[3:]) #viilutab järjendi alustades elemndist 3, kuni elemendini olematu elemendini 5, element 5 väljaarvatud
+ 
+print(kohukesemaitsed[-1:]) #viilutab järjendit tagurpidi, alustades elemendist 0, ning loeb ühe elemendi tagurpidi järjendi teisest otsast
+ 
+teavitus = "Palun tee tööd ära."
+print(teavitus[10:14])
+ 
+print(min([1,2,5,5,6,7]))
+print(min([1.1,2.2,5.3,5.5,6.9,7.1]))
+print(max([1,2,5,5,6,7]))
+print(max([1.1,2.2,5.3,5.5,6.9,7.1]))
+print(sum([1,2,5,5,6,7]))
+print(sum([1.1,2.2,5.3,5.5,6.9,7.1]))
+print(sorted([6,3,4,5,9,0]))
+print(3 in [6,3,4,5,9,0])
+print([6,2,4,5,9,0]+[1,2,5,5,6,7])
+print([6,2,4,5,9,0,1,2,5,5,6,7].count(5))
+print([1,3,5]==[5,3,1])
