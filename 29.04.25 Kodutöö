@@ -1,0 +1,44 @@
+# NB! kõik küsimised on tsüklis mis kontrollitud tsüklimuutujaga (mitte True ja break)
+# NB! kõik sisendud töödeldakse standardkujule
+# NB! programmi järjendi sisu väljastamine for-tsükliga
+#
+# Kirjuta ülesanne mis:
+# - küsib kasutajalt kas ta otsib mingit seent või marja
+# - küsimine toimub tsükli sees
+# - - kui seent, siis programm esitab talle seente järjendi sisu. (seal on seened mida te panna otsustasite)
+# - - - siis küsib kasutajalt millise seene kohta ta lugeda tahab, ning teisest - sisujärjendist - kuvatakse
+# kasutajale seene kohta tekst
+# - - - - Kasutajale antakse koos seeneloendiga ka üks alati esinev valikuvõimalus - "lisa juurde"
+# Lisa juurde valikuga lisatakse seentejärjendile otsa uus element, mille sisend küsitakse kasutajalt
+# - - - - sama tehakse ka sisujärjendiga kuhu küsitakse otsa uue sisestatud seene juurde ka selle seene kirjelduslikm info.
+# - - kui marja, siis programm esitab talle marjade järjendi sisu. (seal on marjad mida te panna otsustasite)
+# - - - siis küsib kasutajalt millise marja kohta ta lugeda tahab, ning teisest - sisujärjendist - kuvatakse
+# kasutajale marja kohta tekst
+# - - - - Kasutajale antakse koos marjaloendiga ka üks alati esinev valikuvõimalus - "lisa juurde"
+# Lisa juurde valikuga lisatakse marjajärjendile otsa uus element, mille sisend küsitakse kasutajalt
+# - - - - sama tehakse ka sisujärjendiga kuhu küsitakse otsa uue sisestatud marja juurde ka selle marja kirjelduslikm info.
+# - pärast seda küsib programm uuesti kas ta tahab lugeda veel millegi kohta, ning programm läheb algusesse tagasi
+
+
+seenmari = ""
+
+seened = ['puravik', 'kärbseseen', 'kukeseen', 'kuuseriisikas']
+mari = ['maasikas', 'vaarikas', 'muulukas', 'punane sõstar']
+
+seeneinfo = ['Puravik on puravikuliste sugukonda kuuluv seeneperekond',
+             'Kärbseseen on kandseente perekond kärbseseeneliste sugukonnast',
+             'Harilik kukeseen ehk kantarell on kukeseeneliste sugukonda kukeseene perekonda kuuluv seeneliik.',
+             'Kuuseriisikas on pilvikuliste sugukonda riisika perekonda kuuluv seeneliik.']
+
+marjainfo = ['Maasikas on roosilaadsete seltsi roosõieliste sugukonda kuuluv perekond.',
+             'Harilik vaarikas on roosõieliste sugukonda muraka perekonda kuuluv põõsaliik.',
+             'Muulukas on roosõieliste sugukonda maasika perekonda kuuluv mitmeaastane rohttaim',
+             'Punane sõstar ehk harilik sõstar kuulub sõstraliste sugukonna sõstra perekonda.']
+           
+
+
+while (seenmari == ""):
+    seenmari = input("Kas sa otsid seent või marja?").lower()
+    if seenmari == "seent":
+    
+    
