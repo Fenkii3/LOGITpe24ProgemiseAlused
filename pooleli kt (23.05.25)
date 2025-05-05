@@ -1,0 +1,51 @@
+# NB! kõik küsimised on tsüklis mis kontrollitud tsüklimuutujaga (mitte True ja break)
+# NB! kõik sisendud töödeldakse standardkujule
+# NB! kõik funktsionaalsed osad mis pole üldise programmi osa, peab olema kirjutatud funktsioonina
+# kasutab tkinterit
+# kirjuta programm mis
+#
+# Küsib kasutajalt tema ees ja perekonnanime
+# küsib kasutajalt tema sünnipäeva
+# küsib kasutajalt tema vanust
+# küsib kasutajalt mida ta oma sünnipäevakaardile näha tahab
+# - kas õhupalle (jah/ei) #õhupalli joonistamine on alamfunktsioon
+# - - kui jah siis mitu (arv)
+# - kas kooki küünaldega (jah/ei) (küünalde arv on kasutaja vanus +=1) #koogi ja küünalde joonistamine on alamfunktsioon)
+# - kas kingitust õnnesoovidega (palju õnne vanus +=1 saamise puhul)
+# - või kas kõike korraga
+# programm joonistab kasutajale tkinteri abil sünnipäevakaardi.
+
+from tkinter import *
+
+raam = Tk()
+raam.title("sünnakaart")
+tahvel = Canvas(raam, width=1000, height=1000)
+
+nimi = ""
+sünnipäev = ""
+vanus = ""
+vaste = ""
+
+while nimi == "" or sünnipäev == "" or vanus == "":
+    nimi = input("Palun sisesta oma ees-ja perekonnanimi: ")
+    sünnipäev = input("Palun sisesta oma sünnipäev: ")
+    vanus = input("Palun sisestage oma vanus: ")
+while (vaste == ""):
+    vaste = input("Mida sa soovid oma sünnipäevakaardil näha?")
+    if (vaste == "õhupalle"):
+        vaste = input("Mitu tükki sa neid näha soovid?")
+        def õhupalle(a):
+
+while (vaste == ""):
+    vaste = input("Mida sa soovid oma sünnipäevakaardil näha?")
+    if (vaste == "õhupalle"):
+        vaste = input("Mitu tükki sa neid näha soovid?")
+            tahvel.create_line(356,101,359,164,358,265,358,382,359,494,360,541,431,537,497,536,601,536,600,447,598,320,602,186,600,103,522,102,450,103,405,103,378,101,358,102, width=2, fill="black")
+            tahvel.create_line(433,513,428,504,421,495,416,486,410,476, width=2, fill="black")
+            tahvel.create_line(408,473,399,476,390,473,384,467,382,456,391,448,402,446,414,452,417,462,414,469,411,471, width=2, fill="red")
+    if (vaste == "kooki küünaldega"):
+        vaste = input("Näe siin on su kaart kus peal on kook ja küünlad")
+        
+tahvel.pack()
+raam.mainloop()
+    
