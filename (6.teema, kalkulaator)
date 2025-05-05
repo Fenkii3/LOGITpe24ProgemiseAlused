@@ -1,0 +1,40 @@
+def liida(a, b):
+    return a+b
+def lahuta(a, b):
+    return a-b
+def korruta(a, b):
+    return a*b
+def jaga(a, b):
+    return a/b
+def astenda(a, b):
+    return a**b
+ 
+valitehe="""
+Palun vali sooritatav tehe:
+¤ liida
+¤ lahuta
+¤ jaga
+¤ korruta
+¤ astenda
+"""
+variableA = 0
+variableB = 0
+tehe = ""
+while tehe == "":
+    tehe = input(valitehe)
+if tehe != "liida" and tehe != "lahuta" and tehe != "korruta" and tehe != "jaga" and tehe != "astenda":
+    print("Ei tunne tehte liiki, palun sisesta uuesti")
+tehe = ""
+if tehe != "":
+    variableA = int(input("sisesta esimene arv (korrutatav jagatav)"))
+    variableB = int(input("sisesta teine arv (korrutatav jagatav)"))
+if tehe == "liida":
+    print(liida(variableA,variableB))
+elif tehe == "lahuta":
+    print(lahuta(variableA,variableB))
+elif tehe == "korruta":
+    print(korruta(variableA,variableB))
+elif tehe == "jaga":
+    print(jaga(variableA,variableB))
+elif tehe == "astenda":
+    print(astenda(variableA,variableB))
